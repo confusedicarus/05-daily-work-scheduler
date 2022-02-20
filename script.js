@@ -3,14 +3,15 @@ $("#currentDay").html(todayDate);
 
 $(document).ready(function () {
   $(".saveBtn").on("click", function () {
-    var text = $(this).siblings(".description").val();
     var time = $(this).parent().attr("id");
+    var text = $(this).siblings(".description").val();
     localStorage.setItem(time, text);
   });
   function timeTracking() {
     var timeNow = moment().hour();
     $(".time-blocks").each(function () {
-      var timeBlock = parseInt($(this).attr("id").split("hour"[1]));
+      // var timeBlock = parseInt($(this).attr("id").split("hour"[0]));
+      var timeBlock = ;
       if (timeBlock < timeNow) {
         $(this).removeClass("future");
         $(this).removeClass("present");
@@ -25,6 +26,8 @@ $(document).ready(function () {
         $(this).addClass("future");
       }
     });
+    console.log(timeNow);
+    console.log(timeBlock);
   }
   $("hour6 .description").val(localStorage.getItem("hour6"));
   $("hour7 .description").val(localStorage.getItem("hour7"));
@@ -45,4 +48,6 @@ $(document).ready(function () {
   $("hour22 .description").val(localStorage.getItem("hour22"));
   $("hour23 .description").val(localStorage.getItem("hour23"));
   timeTracking();
+  
 });
+
