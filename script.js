@@ -10,8 +10,8 @@ $(document).ready(function () {
   function timeTracking() {
     var timeNow = moment().hour();
     $(".time-blocks").each(function () {
-      // var timeBlock = parseInt($(this).attr("id").split("hour"[0]));
-      var timeBlock = ;
+      var timeBlock = parseInt($(this).attr("id").split("hour")[0]);
+      console.log(timeBlock);
       if (timeBlock < timeNow) {
         $(this).removeClass("future");
         $(this).removeClass("present");
@@ -48,6 +48,4 @@ $(document).ready(function () {
   $("hour22 .description").val(localStorage.getItem("hour22"));
   $("hour23 .description").val(localStorage.getItem("hour23"));
   timeTracking();
-  
 });
-
