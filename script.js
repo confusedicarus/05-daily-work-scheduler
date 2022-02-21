@@ -26,8 +26,13 @@ $(document).ready(function () {
         $(this).addClass("future");
       }
     });
+    $(".time-blocks").each(function() {
+      $(".description").text = time, text;
+    });
+    
     console.log(timeNow);
     console.log(timeBlock);
+    console.log(time, text);
   }
   $("hour6 .description").val(localStorage.getItem("hour6"));
   $("hour7 .description").val(localStorage.getItem("hour7"));
