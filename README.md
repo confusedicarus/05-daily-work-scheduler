@@ -1,5 +1,5 @@
-![Screenshot of final project](./Capture.PNG)
+![Screenshot of final project](./assets/Capture.PNG)
 
-Created a script.js that populates questions and checks those answer based on user input. A timer is started when the start button is selected. User is prompted to input initials and their score is recorded in local.storage in an object array.
+Much of the styles and lay out were pre-determined with code provided through the styles.css file provided. Background fields change based on the time of day as well as accurate time keeping due to the moment api included with this project. The save function saves the text into local storage.
 
-[Link to final project webpage](https://confusedicarus.github.io/04-js-popQuiz/)
+[Link to final project webpage](https://confusedicarus.github.io/05-daily-work-scheduler/)
