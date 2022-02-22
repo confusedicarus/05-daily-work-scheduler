@@ -1,12 +1,15 @@
+//sets date in the header
 var todayDate = moment().format("ddd, MMM Do YYYY");
 $("#currentDay").html(todayDate);
 
+//starts the button click function and saves the user input and the timeblock sequence in the local storage
 $(document).ready(function () {
   $(".saveBtn").on("click", function () {
     var time = $(this).parent().attr("id");
     var text = $(this).siblings(".description").val();
     localStorage.setItem(time, text);
   });
+  //tracks time vs the timeblock and changes the class of the element to apply different styles
   function timeTracking() {
     var timeNow = moment().hour();
     $(".time-blocks").each(function () {
@@ -26,38 +29,12 @@ $(document).ready(function () {
         $(this).addClass("future");
       }
     });
-
-    // $(".time-blocks").each(function() {
-    //   $(".description").text = time, text;
-    // });
-    
-    //console.log(timeNow);
-    //console.log(timeBlock);
-    //console.log(time, text);
   }
-
-  $(".description").each(function(){
+  //displays user input from local storage and displays it on the page
+  $(".description").each(function () {
     var userInput = $(this).parent()[0].id;
     console.log(userInput);
-    $(this).val(localStorage.getItem(userInput))
-  })
-  // $("#6hour .description").val(localStorage.getItem("6hour"));
-  // $("#7hour .description").val(localStorage.getItem("7hour"));
-  // $("#8hour .description").val(localStorage.getItem("hour8"));
-  // $("9hour .description").val(localStorage.getItem("9hour"));
-  // $("hour10 .description").val(localStorage.getItem("hour10"));
-  // $("hour11 .description").val(localStorage.getItem("hour11"));
-  // $("hour12 .description").val(localStorage.getItem("hour12"));
-  // $("hour13 .description").val(localStorage.getItem("hour13"));
-  // $("hour14 .description").val(localStorage.getItem("hour14"));
-  // $("hour15 .description").val(localStorage.getItem("hour15"));
-  // $("hour16 .description").val(localStorage.getItem("hour16"));
-  // $("hour17 .description").val(localStorage.getItem("hour17"));
-  // $("hour18 .description").val(localStorage.getItem("hour18"));
-  // $("hour19 .description").val(localStorage.getItem("hour19"));
-  // $("hour20 .description").val(localStorage.getItem("hour20"));
-  // $("hour21 .description").val(localStorage.getItem("hour21"));
-  // $("hour22 .description").val(localStorage.getItem("hour22"));
-  // $("hour23 .description").val(localStorage.getItem("hour23"));
+    $(this).val(localStorage.getItem(userInput));
+  });
   timeTracking();
 });
